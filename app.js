@@ -991,12 +991,9 @@ app.get('/:api([^\.]+)', function(req, res) {
     res.render('api');
 });
 
-// Only listen on $ node app.js
 
-if (!module.parent) {
-    var port = process.env.PORT || config.port;
-    var l = app.listen(port);
-    l.on('listening', function(err) {
-        console.log("Express server listening on port %d", port);
-    });
-}
+var port = process.env.PORT || config.port;
+var l = app.listen(port);
+l.on('listening', function(err) {
+    console.log("Express server listening on port %d", port);
+});
