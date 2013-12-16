@@ -72,7 +72,7 @@ db.on("error", function(err) {
 // Load API Configs
 //
 
-config.apiConfigDir = path.resolve(config.apiConfigDir || 'public/data');
+config.apiConfigDir = path.resolve(path.join(__dirname, config.apiConfigDir) || path.join(__dirname,  'public/data'));
 if (!fs.existsSync(config.apiConfigDir)) {
     console.error("Could not find API config directory: " + config.apiConfigDir);
     process.exit(1);
